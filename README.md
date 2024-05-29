@@ -34,3 +34,17 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## 기타
+tailwindcss/forms
+유틸리티를 사용하여 form 요소를 쉽게 재정의할 수 있도록 form 스타일에 대한 기본 reset을 제공하는 플러그인입니다.
+npm install -D @tailwindcss/forms
+https://github.com/tailwindlabs/tailwindcss-forms
+
+tailwindcss/forms 테스트
+https://tailwindcss-forms.vercel.app
+
+daisyUI
+Tailwind CSS용 가장 인기있는 컴포넌트 라이브러리
+npm i -D daisyui@latest
+https://daisyui.com
