@@ -2,34 +2,32 @@ import { NextRequest, NextResponse } from "next/server";
 import getSession from "./lib/session";
 
 interface Routes {
-    [key: string]: boolean;
+  [key: string]: boolean;
 }
 
 const publicOnlyUrls: Routes = {
-    "/": true,
-    "/login": true,
-    "/sms": true,
-    "/create-account": true,
-    "/github/start": true,
-    "/github/complete": true,
+  "/": true,
+  "/login": true,
+  "/sms": true,
+  "/create-account": true,
+  "/github/start": true,
+  "/github/complete": true,
 };
 
 export async function middleware(request: NextRequest) {
-    const session = await getSession();
-    const exists = publicOnlyUrls[request.nextUrl.pathname];
-    if (!session.id) {
-        if (!exists) {
-            return NextResponse.redirect(new URL("/", request.url));
-        }
-    } else {
-        if (exists) {
-            return NextResponse.redirect(new URL("/products", request.url));
-        }
+  const session = await getSession();
+  const exists = publicOnlyUrls[request.nextUrl.pathname];
+  if (!session.id) {
+    if (!exists) {
+      return NextResponse.redirect(new URL("/", request.url));
     }
+  } else {
+    if (exists) {
+      return NextResponse.redirect(new URL("/products", request.url));
+    }
+  }
 }
 
 export const config = {
-    matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
+  matcher: ["/((?!_next/static|_next/image|favicon.ico).*)"],
 };
-
-// 웹사이트의 모든 request하나마다 middleware가 실행된다.
