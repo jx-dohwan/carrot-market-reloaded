@@ -33,7 +33,7 @@ async function getProduct(id: number) {
 }
 
 const getCachedProduct = nextCache(getProduct, ["product-detail"], {
-    tags: ["product-detail", "xxxx"],
+    tags: ["product-detail"],
 });
 
 async function getProductTitle(id: number) {
@@ -50,7 +50,7 @@ async function getProductTitle(id: number) {
 }
 
 const getCachedProductTitle = nextCache(getProductTitle, ["product-title"], {
-    tags: ["product-title", "xxxx"],
+    tags: ["product-title"],
 });
 
 
