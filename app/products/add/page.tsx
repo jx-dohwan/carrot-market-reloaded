@@ -12,23 +12,12 @@ export default function AddProduct() {
     const onImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const {
             target: { files },
-
         } = event;
         if (!files) {
             return;
         }
         const file = files[0];
-
-        // 이미지인지 확인
-        if (!file.type.includes("image")) {
-            return { error: "이미지 파일만 업로드 할수 있습니다." };
-        }
-
-        // 4MB이상 초과시 validtaion 처리를 할 예정
-        if ((file.size / 1024) * 1024 > 4) {
-            return { error: "크기가 4MB를 초과하는 이미지는 업로드 할수 없습니다." };
-        }
-
+        
         const url = URL.createObjectURL(file);
         setPreview(url);
     };
