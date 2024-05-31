@@ -1,3 +1,5 @@
+import TabBar from "@/components/tab-bar";
+
 export default function HomeLayout({
     children,
     modal,
@@ -9,6 +11,7 @@ export default function HomeLayout({
         <>
             {children}
             {modal}
+            <TabBar />
         </>
     );
 }
