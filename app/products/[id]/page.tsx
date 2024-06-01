@@ -9,6 +9,7 @@ import {
     revalidatePath,
     revalidateTag,
 } from "next/cache";
+import getSession from "@/lib/session";
 
 async function getIsOwner(userId: number) {
     // const session = await getSession();
